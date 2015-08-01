@@ -1,11 +1,8 @@
-$i
 @foreach($data as $idx=>$val)
 
-    <li class="treeview active">
+    <li class="treeview {{ (Request::segment($seq) == $val['name']) ? 'active' : ''  }}">
 
         <a href="{{ url($val['uri']) }}">
-
-            {{ $idx }}
 
             {{-- Display icon --}}
             @if ($val['module_item_parent_id'] == 0)
@@ -32,7 +29,7 @@ $i
         @if ($val['children'] !== null)
 
             <ul class="treeview-menu">
-                @include('sidebar', array('data' => $val['children']))
+                @include('sidebar', array('data' => $val['children'], 'seq' => $seq+1))
             </ul>
 
         @endif

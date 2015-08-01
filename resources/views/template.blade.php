@@ -316,7 +316,7 @@
             <ul class="sidebar-menu">
                 <li class="header">MAIN NAVIGATION</li>
 
-                @include('sidebar', array('data' => $navigation))
+                @include('sidebar', array('data' => $navigation, 'seq' => 1))
 
 
             </ul>
