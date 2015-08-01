@@ -1,9 +1,11 @@
-
+$i
 @foreach($data as $idx=>$val)
 
-    <li class="treeview">
+    <li class="treeview active">
 
-        <a href="{{ $val['uri'] }}">
+        <a href="{{ url($val['uri']) }}">
+
+            {{ $idx }}
 
             {{-- Display icon --}}
             @if ($val['module_item_parent_id'] == 0)

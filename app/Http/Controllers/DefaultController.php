@@ -10,6 +10,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 
 /**
@@ -19,8 +20,6 @@ use Illuminate\Support\Facades\Auth;
 class DefaultController extends Controller{
 
     public function __construct() {
-
-
 
         /*if(!Auth::check()) {
 
@@ -33,7 +32,7 @@ class DefaultController extends Controller{
     {
         var_dump($v); exit();
     }
-    public function dashboard() {
+    public function index() {
 
         return view('home');
     }

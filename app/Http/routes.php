@@ -13,6 +13,17 @@
 
 Route::controller('auth', 'Auth\AuthController');
 
-Route::get('/', 'DefaultController@dashboard');
+Route::get('/', 'DefaultController@index');
 Route::get('/demo', 'DefaultController@demo');
 Route::get('/letter', 'Letter\LetterCategoryController@view');
+
+
+Route::resource('session', 'SessionConsgsdtroller');
+
+/*
+ * Dashboard routing
+ */
+Route::get('dashboard/profile', 'Dashboard\ProfileController@index');
+Route::get('dashboard/password', 'Dashboard\ProfileController@changePassword');
+Route::get('dashboard/signature', 'Dashboard\SignatureController@index');
+Route::get('dashboard/chat', 'Dashboard\ChatController@index');
